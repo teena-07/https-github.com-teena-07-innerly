@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Innerly — psychology-inspired self-reflection and wellness tools for understanding yourself and building better patterns." />
+  <title>Innerly — Understand Yourself. Build Better Patterns.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="#home">innerly<span>.</span></a>
+    <nav>
+      <a href="#assessments">Assessments</a>
+      <a href="#toolkits">Toolkits</a>
+      <a href="#how">How it works</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="nav-cta" href="#assessments">Explore</a>
+    <button class="menu" aria-label="Open menu">☰</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Psychology-inspired self-discovery</div>
+        <h1>Understand yourself.<br><em>Build better patterns.</em></h1>
+        <p>Simple, thoughtful tools to help you reflect on your habits, emotions, boundaries and relationships — one small step at a time.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#assessments">Discover your pattern <span>→</span></a>
+          <a class="text-link" href="#how">How Innerly works</a>
+        </div>
+        <div class="trust-row">
+          <span>✦ Private & reflective</span>
+          <span>✦ Self-guided</span>
+          <span>✦ Practical tools</span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="orb orb-a"></div>
+        <div class="orb orb-b"></div>
+        <div class="quote-card">
+          <span class="tiny">A little reminder</span>
+          <p>You don't have to change everything at once. You just have to notice what needs your attention.</p>
+          <div class="line"></div>
+          <span class="tiny">your inner world matters</span>
+        </div>
+        <div class="float-card card-top">✦ Self-awareness</div>
+        <div class="float-card card-bottom">♡ Better boundaries</div>
+      </div>
+    </section>
+
+    <section class="marquee">
+      <span>OVERTHINKING</span><i>✦</i><span>BOUNDARIES</span><i>✦</i><span>CONFIDENCE</span><i>✦</i><span>SELF-AWARENESS</span><i>✦</i><span>RELATIONSHIPS</span>
+    </section>
+
+    <section id="assessments" class="section">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Start with yourself</div>
+          <h2>What are you curious<br>about lately?</h2>
+        </div>
+        <p>Choose a reflection path. Answer a few thoughtful questions and get practical prompts to help you understand your patterns.</p>
+      </div>
+
+      <div class="assessment-grid">
+        <article class="assessment featured">
+          <div class="icon">◌</div>
+          <span>Most explored</span>
+          <h3>Overthinking</h3>
+          <p>Notice the thought loops that keep pulling you back in.</p>
+          <button onclick="openAssessment('Overthinking')">Explore <span>→</span></button>
+        </article>
+        <article class="assessment">
+          <div class="icon">♡</div>
+          <span>Relationships</span>
+          <h3>Boundaries</h3>
+          <p>Reflect on saying yes, saying no and protecting your energy.</p>
+          <button onclick="openAssessment('Boundaries')">Explore <span>→</span></button>
+        </article>
+        <article class="assessment">
+          <div class="icon">✦</div>
+          <span>Self-growth</span>
+          <h3>Confidence</h3>
+          <p>Understand the situations where your self-belief gets quieter.</p>
+          <button onclick="openAssessment('Confidence')">Explore <span>→</span></button>
+        </article>
+        <article class="assessment">
+          <div class="icon">∞</div>
+          <span>Connections</span>
+          <h3>Relationship Patterns</h3>
+          <p>Explore communication, conflict and recurring relationship habits.</p>
+          <button onclick="openAssessment('Relationship Patterns')">Explore <span>→</span></button>
+        </article>
+      </div>
+    </section>
+
+    <section id="how" class="how-section">
+      <div class="how-image">
+        <div class="sun"></div>
+        <div class="plant">☼</div>
+        <div class="image-note">small steps<br>count too.</div>
+      </div>
+      <div class="how-copy">
+        <div class="eyebrow">No complicated jargon</div>
+        <h2>Turn self-awareness into something you can actually use.</h2>
+        <p>Innerly combines psychology-informed reflection with simple, practical exercises. The goal isn't to label you. It's to help you notice patterns and choose what you want to do next.</p>
+        <div class="steps">
+          <div><b>01</b><span><strong>Choose</strong><br>Pick what you want to understand.</span></div>
+          <div><b>02</b><span><strong>Reflect</strong><br>Answer a few guided questions.</span></div>
+          <div><b>03</b><span><strong>Practice</strong><br>Use small exercises in everyday life.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="toolkits" class="section toolkit-section">
+      <div class="section-heading centered">
+        <div class="eyebrow">Made for real life</div>
+        <h2>Tools for your everyday inner world.</h2>
+        <p>Start small. Pick one area and give yourself a little room to reflect.</p>
+      </div>
+      <div class="toolkit-grid">
+        <article><div class="tool-icon">01</div><h3>Overthinking Reset</h3><p>Thought prompts and grounding exercises for busy minds.</p><a href="#" onclick="showToast('Overthinking Reset is coming soon!');return false;">Coming soon →</a></article>
+        <article><div class="tool-icon">02</div><h3>Boundary Builder</h3><p>Practice noticing your limits and expressing them clearly.</p><a href="#" onclick="showToast('Boundary Builder is coming soon!');return false;">Coming soon →</a></article>
+        <article><div class="tool-icon">03</div><h3>Confidence Journal</h3><p>Guided reflections to notice strengths, evidence and progress.</p><a href="#" onclick="showToast('Confidence Journal is coming soon!');return false;">Coming soon →</a></article>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div>
+        <div class="eyebrow">The Innerly note</div>
+        <h2>One thoughtful idea.<br>Once a week.</h2>
+      </div>
+      <form onsubmit="subscribe(event)">
+        <input id="email" type="email" placeholder="Your email address" required />
+        <button class="button primary" type="submit">Join free →</button>
+        <small>No spam. Just occasional psychology-inspired reflections.</small>
+      </form>
+    </section>
+
+    <section id="about" class="about">
+      <div>
+        <div class="eyebrow">A gentle distinction</div>
+        <h2>Innerly is about understanding — not diagnosing.</h2>
+      </div>
+      <p>Our tools are designed for self-reflection, education and personal growth. They are not a substitute for professional mental-health assessment, diagnosis or treatment. If you're experiencing significant distress or feel unsafe, please seek support from a qualified mental-health professional or local emergency service.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><span class="logo">innerly<span>.</span></span><p>Understand yourself. Build better patterns.</p></div>
+    <div class="footer-links"><a href="#assessments">Assessments</a><a href="#toolkits">Toolkits</a><a href="#about">Disclaimer</a></div>
+    <div class="copyright">© 2026 Innerly. For educational & wellness use.</div>
+  </footer>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="close" onclick="closeAssessment()">×</button>
+      <div class="eyebrow">Quick reflection</div>
+      <h2 id="modalTitle">Overthinking</h2>
+      <p>Answer honestly. There are no right or wrong answers.</p>
+      <div id="questions"></div>
+      <button class="button primary full" onclick="finishAssessment()">See my reflection →</button>
+      <div id="result" class="result"></div>
+    </div>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
