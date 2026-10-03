@@ -29,7 +29,7 @@ const INNERLY_PRODUCTS = {
     amount: 299
   }
 };
-async function startPayment(productKey) {
+
   // =====================================================
 // START RAZORPAY PAYMENT
 // =====================================================
