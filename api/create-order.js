@@ -1,3 +1,24 @@
+// =====================================================
+// INNERLY — RAZORPAY CREATE ORDER
+// =====================================================
+
+const PRODUCTS = {
+  self_reflection: {
+    name: "Personalized Self-Reflection Report",
+    amount: 19900
+  },
+
+  overthinking_reset: {
+    name: "7-Day Overthinking Reset",
+    amount: 14900
+  },
+
+  relationship_report: {
+    name: "Relationship Pattern Report",
+    amount: 29900
+  }
+};
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({
@@ -9,31 +30,21 @@ export default async function handler(req, res) {
   try {
     const { product } = req.body || {};
 
-    const PRODUCTS = {
-      self_reflection: {
-        name: "Personalized Self-Reflection Report",
-        amount: 19900
-      },
+    if (!product) {
+      return res.status(400).json({
+        success: false,
+        message: "Product is required"
+      });
+    }
 
-      overthinking_reset: {
-        name: "7-Day Overthinking Reset",
-        amount: 14900
-      },
+    const selectedProduct = PRODUCTS[product];
 
-      relationship_report: {
-        name: "Relationship Pattern Report",
-        amount: 29900
-      }
-    };
-
-    if (!product || !PRODUCTS[product]) {
+    if (!selectedProduct) {
       return res.status(400).json({
         success: false,
         message: "Invalid product"
       });
     }
-
-    const selectedProduct = PRODUCTS[product];
 
     const keyId = process.env.RAZORPAY_KEY_ID;
     const keySecret = process.env.RAZORPAY_KEY_SECRET;
@@ -45,9 +56,9 @@ export default async function handler(req, res) {
       });
     }
 
-    const auth = Buffer.from(
-      `${keyId}:${keySecret}`
-    ).toString("base64");
+    const auth = Buffer
+      .from(`${keyId}:${keySecret}`)
+      .toString("base64");
 
     const response = await fetch(
       "https://api.razorpay.com/v1/orders",
@@ -55,7 +66,7 @@ export default async function handler(req, res) {
         method: "POST",
 
         headers: {
-          "Authorization": `Basic ${auth}`,
+          Authorization: `Basic ${auth}`,
           "Content-Type": "application/json"
         },
 
@@ -86,7 +97,11 @@ export default async function handler(req, res) {
     return res.status(200).json({
       success: true,
       order: data,
-      product: selectedProduct
+      product: {
+        id: product,
+        name: selectedProduct.name,
+        amount: selectedProduct.amount / 100
+      }
     });
 
   } catch (error) {
